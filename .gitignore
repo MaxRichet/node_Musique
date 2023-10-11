@@ -1,2 +1,5 @@
-node_modules
-.anv
+# Dossiers
+node_modules/
+
+# Fichiers
+.env
