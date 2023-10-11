@@ -10,10 +10,12 @@ app.use(express.urlencoded());
 app.use(express.json());
 
 const musicRoute = require(`./routes/musicRoute`);
-app.use('/musics', musicRoute);
-
+const cumulRoute = require(`./routes/cumulRoute`);
 const voteRoute = require(`./routes/voteRoute`);
+
+app.use('/musics', musicRoute);
 app.use('/', voteRoute);
+app.use('/', cumulRoute);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
