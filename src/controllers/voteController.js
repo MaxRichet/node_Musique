@@ -10,6 +10,7 @@ exports.listAllVotes = async (req, res) => {
 }
 
 exports.createAVote = async (req, res) => {
+    const regex = /^[1-5]$/;
     try {
         await Vote.findById(req.params.id_music);
         const newVote = new Vote({...req.body, music_id: req.params.id_music});
