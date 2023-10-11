@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 let voteSchema = new Schema ({
     note: {
-        type: Int,
+        type: Number,
         required: true
     },
     music_id: {

@@ -5,13 +5,13 @@ const voteController = require('../controllers/voteController');
 
 // /posts
 router
-    .route('/votes/:id_vote/music')
+    .route('/musics/:id_music/votes')
     .get(voteController.listAllVotes)
     .post(voteController.createAVote);
 
 // /posts/:id_post
 router
-    .route('/musics/:id_vote')
+    .route('/votes/:id_vote')
     .delete(voteController.deleteAVote)
     .put(voteController.updateAVote)
     .get(voteController.getAVote);
