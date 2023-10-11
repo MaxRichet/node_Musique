@@ -15,7 +15,7 @@ const voteRoute = require(`./routes/voteRoute`);
 
 app.use('/musics', musicRoute);
 app.use('/', voteRoute);
-app.use('/votes/result', cumulRoute);
+app.use('/', cumulRoute);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
