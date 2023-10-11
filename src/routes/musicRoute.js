@@ -6,14 +6,14 @@ const musicController = require('../controllers/musicController');
 // /posts
 router
     .route('/')
-    .get(musicController.listAllmusics)
-    .post(musicController.createAmusic);
+    .get(musicController.listAllMusics)
+    .post(musicController.createAMusic);
 
     // /posts/:id_post
 router
-    .route('/:id_post')
-    .delete(musicController.deleteAmusic)
-    .put(musicController.modifiedAmusic)
-    .get(musicController.getAmusic);
+    .route('/:id_music')
+    .delete(musicController.deleteAMusic)
+    .put(musicController.updateAMusic)
+    .get(musicController.getAMusic);
 
 module.exports = router;

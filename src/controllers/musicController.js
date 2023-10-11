@@ -25,7 +25,7 @@ exports.createAMusic = async (req, res) => {
     }
 }
 
-exports.modifiedAMusic = async (req, res) => {
+exports.updateAMusic = async (req, res) => {
     try {
         const music = await Music.findByIdAndUpdate(req.params.id_music, req.body, {new: true});
         res.status(200);
@@ -51,8 +51,11 @@ exports.deleteAMusic = async (req, res) => {
 exports.getAMusic = async (req, res) => {
     try {
         const music = await Music.findById(req.params.id_music);
-        res.status(200);
-        res.json(music);
+        if (music) {
+            res.status(200).json(music);
+        } else {
+            res.status(204).json({message: 'Music not found.'})
+        }
     } catch (error) {
         res.status(500);
         console.log(error);
